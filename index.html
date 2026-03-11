@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ngo Gia Phuc | CS Student</title>
+    
+    <!-- SEO -->
+    <meta name="description" content="Ngo Gia Phuc - Computer Science student at College University. Dean's Honor List (3x), AP Scholar with Distinction.">
+    <meta name="keywords" content="Ngo Gia Phuc, CS Student, Developer, Flutter, React, Python">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Ngo Gia Phuc | Portfolio">
+    <meta property="og:description" content="Computer Science student & developer">
+    <meta property="og:url" content="https://ngogiaphuc.github.io">
+    
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --secondary: #3b82f6;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --border: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: #ffffff;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Last Updated */
+        .last-updated {
+            text-align: right;
+            color: var(--gray);
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--dark);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            color: var(--gray);
+            text-decoration: none;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .contact-links a:hover {
+            color: var(--primary);
+        }
+
+        .contact-links i {
+            font-size: 1rem;
+        }
+
+        /* Section */
+        .section {
+            margin: 2rem 0;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--dark);
+            border-bottom: 2px solid var(--dark);
+            padding-bottom: 0.25rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Education */
+        .education-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin-bottom: 0.25rem;
+        }
+
+        .education-header h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .education-date {
+            color: var(--gray);
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+
+        .education-sub {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-degree {
+            font-style: italic;
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        .education-gpa {
+            font-size: 0.95rem;
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        .coursework {
+            margin-top: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .coursework strong {
+            font-weight: 600;
+        }
+
+        .awards {
+            margin-top: 0.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .award-badge {
+            background: var(--light);
+            color: var(--primary);
+            padding: 0.2rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid var(--border);
+        }
+
+        /* Skills */
+        .skills-content {
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .skills-content strong {
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        /* Projects & Experience */
+        .project-item, .experience-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .project-header, .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin-bottom: 0.25rem;
+        }
+
+        .project-header h3, .experience-header h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .project-tech {
+            color: var(--gray);
+            font-style: italic;
+            font-size: 0.9rem;
+            font-weight: 400;
+        }
+
+        .project-date, .experience-date {
+            color: var(--gray);
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+
+        .project-description, .experience-description {
+            margin-top: 0.5rem;
+            padding-left: 1rem;
+        }
+
+        .project-description p, .experience-description p {
+            font-size: 0.95rem;
+            color: var(--gray);
+            margin-bottom: 0.25rem;
+            position: relative;
+        }
+
+        .project-description p:before, .experience-description p:before {
+            content: "•";
+            color: var(--primary);
+            font-weight: bold;
+            position: absolute;
+            left: -1rem;
+        }
+
+        /* Hobbies section */
+        .hobbies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .hobby-item {
+            padding: 1rem;
+            background: var(--light);
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .hobby-title {
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .hobby-date {
+            color: var(--gray);
+            font-size: 0.85rem;
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+
+        .hobby-description {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        /* CV Download Button */
+        .cv-download {
+            text-align: center;
+            margin: 2rem 0 1rem;
+        }
+
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: var(--primary);
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-download:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-download i {
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+            color: var(--gray);
+            font-size: 0.875rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .contact-links {
+                gap: 1rem;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .education-header, .education-sub, .project-header, .experience-header {
+                flex-direction: column;
+                gap: 0.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Last Updated -->
+        <div class="last-updated">
+            Last Updated on January 12th, 2024
+        </div>
+
+        <!-- Header -->
+        <div class="header">
+            <h1>Ngo Gia Phuc</h1>
+            <div class="contact-links">
+                <a href="https://github.com/ngogiaphuc" target="_blank">
+                    <i class="fab fa-github"></i> github.com/ngogiaphuc
+                </a>
+                <a href="https://ngogiaphuc.com" target="_blank">
+                    <i class="fas fa-code"></i> ngogiaphuc.com
+                </a>
+                <a href="https://linkedin.com/in/ngogiaphuc" target="_blank">
+                    <i class="fab fa-linkedin"></i> linkedin.com/in/ngogiaphuc
+                </a>
+                <a href="mailto:ngogiaphuc@gmail.com">
+                    <i class="fas fa-envelope"></i> ngogiaphuc@gmail.com
+                </a>
+            </div>
+        </div>
+
+        <!-- CV Download Button -->
+        <div class="cv-download">
+            <a href="giaphuccv.pdf" download class="btn-download">
+                <i class="fas fa-file-pdf"></i> Download CV (PDF)
+            </a>
+        </div>
+
+        <!-- Education -->
+        <div class="section">
+            <h2 class="section-title">Education</h2>
+            
+            <div class="education-item">
+                <div class="education-header">
+                    <h3>College University</h3>
+                    <span class="education-date">June 2026</span>
+                </div>
+                <div class="education-sub">
+                    <span class="education-degree">B.S. Computer Science</span>
+                    <span class="education-gpa">Current GPA: 3.25/4.0</span>
+                </div>
+            </div>
+
+            <div class="education-item">
+                <div class="education-header">
+                    <h3>Little High School</h3>
+                    <span class="education-date">June 2022</span>
+                </div>
+                <div class="education-sub">
+                    <span class="education-degree">Dual Enrollment at Mission Community College</span>
+                    <span class="education-gpa">GPA: 4.44/4.0</span>
+                </div>
+            </div>
+
+            <div class="coursework">
+                <strong>Courses:</strong> Object-Oriented Programming, Data Structures & Algorithms, Embedded Systems, Discrete Math, Linear Algebra, Calculus, Physics, Probability & Statistics
+            </div>
+            
+            <div class="awards">
+                <span class="award-badge">Dean's Honor List (3x)</span>
+                <span class="award-badge">AP Scholar with Distinction (2x)</span>
+                <span class="award-badge">World Language History Award (Spanish)</span>
+            </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="section">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-content">
+                <p><strong>Languages:</strong> C/C++, Python, Java, JavaScript/TypeScript, HTML/CSS, LaTeX</p>
+                <p><strong>Tools:</strong> Git/GitHub, VS Code, IntelliJ CLion/PyCharm/IDEA, Atom</p>
+            </div>
+        </div>
+
+        <!-- Projects -->
+        <div class="section">
+            <h2 class="section-title">Projects</h2>
+            
+            <div class="project-item">
+                <div class="project-header">
+                    <h3>Carbon <span class="project-tech">| Flutter, Dart, Supabase, APIs (INRIX, Google Maps)</span></h3>
+                    <span class="project-date">Nov. 2023</span>
+                </div>
+                <div class="project-description">
+                    <p>Team project for the INRIX Hack 2023 Hackathon, earned Honorable Mention</p>
+                    <p>Developed a social media mobile app to gamify eco-friendliness using the INRIX API</p>
+                    <p>Learned how to use Flutter in conjunction with backend databases and APIs</p>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-header">
+                    <h3>ChatBuzz <span class="project-tech">| TypeScript, Webpack, Twitch API</span></h3>
+                    <span class="project-date">May 2023 – Present</span>
+                </div>
+                <div class="project-description">
+                    <p>Developed a full-stack web application for Twitch livestreamers to display repeated chat messages on OBS</p>
+                    <p>Experimented with Twitch API's OAuth Access Tokens to get chat data from the given channel</p>
+                    <p>Collaborated with livestreamers to get feedback and suggested features</p>
+                    <p>Solved problems relating to asynchronous tasks</p>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-header">
+                    <h3>FoodDropper <span class="project-tech">| Java, Maven, Spigot API</span></h3>
+                    <span class="project-date">Aug. 2022</span>
+                </div>
+                <div class="project-description">
+                    <p>Developed a Minecraft server plugin to limit players to one way of replenishing their hunger bar</p>
+                    <p>Used persistent data containers to save and load data, ensuring that it persists across plugin resets</p>
+                    <p>Optimized UX e.g. sound design, food drop timing, supplied saturation level, and addressed potential workarounds</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Experience -->
+        <div class="section">
+            <h2 class="section-title">Experience</h2>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3>Competitive Programming Club</h3>
+                    <span class="experience-date">Sept. 2023 – Present</span>
+                </div>
+                <div class="experience-description">
+                    <p>Member - Involved in the club centered around Competitive Programming</p>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3>Apex Tutoring</h3>
+                    <span class="experience-date">2019 – Present</span>
+                </div>
+                <div class="experience-description">
+                    <p>Tutor - Routinely tutor K–12 students in math, coding, etc.</p>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3>Luigi Team Charity</h3>
+                    <span class="experience-date">2018 – Present</span>
+                </div>
+                <div class="experience-description">
+                    <p>Volunteer, Manager - Earned an award for philanthropic hours spent, still giving away 100 stocked backpacks a year</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hobbies -->
+        <div class="section">
+            <h2 class="section-title">Hobbies</h2>
+            <div class="hobbies-grid">
+                <div class="hobby-item">
+                    <div class="hobby-title">Playing the Drums</div>
+                    <div class="hobby-date">2013 – 2019</div>
+                    <div class="hobby-description">Played the drums in symphonic, jazz, and marching bands</div>
+                </div>
+
+                <div class="hobby-item">
+                    <div class="hobby-title">Time Keeping Challenge</div>
+                    <div class="hobby-date">Feb. 2022 – May 2022</div>
+                    <div class="hobby-description">3rd Place nationally - Won $1500 competing in counting seconds and minutes</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>© 2024 Ngo Gia Phuc. Built with HTML/CSS for GitHub Pages.</p>
+        </div>
+    </div>
+</body>
+</html>
